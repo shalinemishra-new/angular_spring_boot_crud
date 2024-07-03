@@ -1,0 +1,5 @@
+package com.yash.student.model;
+
+public class Student {
+
+}

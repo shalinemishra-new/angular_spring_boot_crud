@@ -1,0 +1,7 @@
+package com.yash.student.service;
+
+import com.yash.student.model.Student;
+
+public interface StudentService {
+	public Student saveEmployee(Student student);
+}

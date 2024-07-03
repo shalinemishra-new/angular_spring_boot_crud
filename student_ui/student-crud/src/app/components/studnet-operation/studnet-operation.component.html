@@ -1,0 +1,36 @@
+<h1>Student List</h1>
+
+<div>
+    <button style="float: right;margin: 10px;" class="button1" routerLink="/add-student">Add Student</button>
+</div>
+
+<table style="width:100%">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Age</th>
+    <th>Contact</th>
+    <th>Email</th>
+    <th>Actions</th>
+</tr>
+
+  <tbody *ngFor="let student of studentList">
+    <tr>
+        <td>{{student.firstName}}</td>
+        <td>{{student.lastName}}</td>
+        <td>{{student.age}}</td>
+        <td>{{student.contact}}</td>
+        <td>{{student.email}}</td>
+        <td>
+          <button (click)="deleteDataById(student.studentId)" class="btn btn-primary btn-lg" id="submitbtn" name="submit">Delete</button>
+          <button style="margin-left: 10px;" (click)="editData(student)" class="btn btn-primary btn-lg" id="submitbtn" name="submit">Edit</button>
+          <button style="margin-left: 10px;" (click)="viewData(student)" class="btn btn-primary btn-lg" id="submitbtn" name="submit">View</button>
+        </td>  
+      </tr>
+  </tbody>
+
+</table>
+
+
+
+

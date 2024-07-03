@@ -1,0 +1,25 @@
+table, th, td {
+    border:1px solid black;
+    border-collapse:collapse;
+    text-align: center;
+  }
+  th{
+      background-color:#96D4D4;
+  }
+  tr:nth-child(odd) {
+    background-color: #D6EEEE;
+  }
+  tr:hover {background-color: red;}
+
+  .button1 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+  }
+  
+  .button1:hover {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+ 

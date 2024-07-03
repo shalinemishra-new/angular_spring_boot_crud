@@ -1,0 +1,62 @@
+<p>update-operation works!</p>
+<body>
+    <div >
+<form [formGroup]="studentupdateform" (ngSubmit)="onUpdate()">
+
+<div class="col-sm-76">
+<label  class="col-sm-2 col-form-label"><b>First Name: </b></label>
+<input type="text" placeholder="name" [(ngModel)]="student.firstName" formControlName="firstName" [pattern]="namepattern">
+<div style="color: red;" *ngIf="studentupdateform.controls['firstName'].touched && studentupdateform.controls['firstName'].invalid">
+    <span *ngIf="studentupdateform.controls['firstName'].hasError('required')">First name is required</span>
+    <span *ngIf="studentupdateform.controls['firstName'].hasError('pattern')">only alphabate with
+        space between 2 to 20 charecters
+    </span>
+</div>
+</div><br>
+
+<div>
+    <label  class="col-sm-2 col-form-label"><b>Last Name: </b></label>
+    <input type="text" placeholder="name" [(ngModel)]="student.lastName" formControlName="lastName" [pattern]="namepattern">
+    <div style="color: red;" *ngIf="studentupdateform.controls['lastName'].touched && studentupdateform.controls['lastName'].invalid">
+        <span *ngIf="studentupdateform.controls['lastName'].hasError('required')">Last name is required</span>
+        <span *ngIf="studentupdateform.controls['lastName'].hasError('pattern')">only alphabate with
+            space between 2 to 20 charecters
+        </span>
+    </div>
+    </div><br>
+
+    <div>
+        <label for="age"><b>Student age: </b></label>
+        <input type="number" placeholder="age" [(ngModel)]="student.age" formControlName="age"  required>
+        <div *ngIf="studentupdateform.controls['age'].touched && studentupdateform.controls['age'].invalid">
+            <span *ngIf="studentupdateform.controls['age'].hasError('required')">age is required</span>
+            <span *ngIf="studentupdateform.controls['age'].hasError('pattern')">age is between 18 to 60</span>
+        </div>
+        </div><br>
+
+        <div>
+            <label for="mobno"><b>Student contact: </b></label>
+            <input type="text" placeholder="mobile no" [(ngModel)]="student.contact" formControlName="contact" required>
+            <div *ngIf="studentupdateform.controls['contact'].touched && studentupdateform.controls['contact'].invalid">
+                <span *ngIf="studentupdateform.controls['contact'].hasError('required')">mobile no is required</span>
+                <span *ngIf="studentupdateform.controls['contact'].getError?.length">use 10 digit mob no</span>
+            </div>
+            </div><br>    
+
+<div>
+<label for="email"><b>Student email: </b></label>
+<input type="text" placeholder="email" [(ngModel)]="student.email" formControlName="email" [pattern]="emailpattern" required readonly>
+<div *ngIf="studentupdateform.controls['email'].touched && studentupdateform.controls['email'].invalid">
+    <span *ngIf="studentupdateform.controls['email'].hasError('required')">email is required</span>
+    <span *ngIf="studentupdateform.controls['email'].hasError('pattern')">inavlid email</span>
+</div>
+</div><br>
+
+
+<div>
+<input type="submit" value="submit">
+</div>
+</form>
+
+</div>
+</body> 

@@ -1,0 +1,70 @@
+<body>
+    <div >
+<form [formGroup]="studentform" (ngSubmit)="onSubmit()">
+
+<div class="col-sm-76">
+<label  class="col-sm-2 col-form-label"><b>First Name: </b></label>
+<input type="text" placeholder="name" formControlName="firstName" [pattern]="namepattern">
+<div style="color: red;" *ngIf="studentform.controls['firstName'].touched && studentform.controls['firstName'].invalid">
+    <span *ngIf="studentform.controls['firstName'].hasError('required')">First name is required</span>
+    <span *ngIf="studentform.controls['firstName'].hasError('pattern')">only alphabate with
+        space between 2 to 20 charecters
+    </span>
+</div>
+</div><br>
+
+<div>
+    <label  class="col-sm-2 col-form-label"><b>Last Name: </b></label>
+    <input type="text" placeholder="name" formControlName="lastName" [pattern]="namepattern">
+    <div style="color: red;" *ngIf="studentform.controls['lastName'].touched && studentform.controls['lastName'].invalid">
+        <span *ngIf="studentform.controls['lastName'].hasError('required')">Last name is required</span>
+        <span *ngIf="studentform.controls['lastName'].hasError('pattern')">only alphabate with
+            space between 2 to 20 charecters
+        </span>
+    </div>
+    </div><br>
+
+    <div>
+        <label for="age"><b>Student age: </b></label>
+        <input type="number" placeholder="age" formControlName="age" [pattern]="agepattern"  required>
+        <div *ngIf="studentform.controls['age'].touched && studentform.controls['age'].invalid">
+            <span *ngIf="studentform.controls['age'].hasError('required')">age is required</span>
+            <span *ngIf="studentform.controls['age'].hasError('pattern')">age is between 18 to 60</span>
+        </div>
+        </div><br>
+
+        <div>
+            <label for="mobno"><b>Student contact: </b></label>
+            <input type="text" placeholder="mobile no" formControlName="contact" required>
+            <div *ngIf="studentform.controls['contact'].touched && studentform.controls['contact'].invalid">
+                <span *ngIf="studentform.controls['contact'].hasError('required')">mobile no is required</span>
+                <span *ngIf="studentform.controls['contact'].getError?.length">use 10 digit mob no</span>
+            </div>
+            </div><br>    
+
+<div>
+<label for="email"><b>Student email: </b></label>
+<input type="text" placeholder="email" formControlName="email" [pattern]="emailpattern" required>
+<div *ngIf="studentform.controls['email'].touched && studentform.controls['email'].invalid">
+    <span *ngIf="studentform.controls['email'].hasError('required')">email is required</span>
+    <span *ngIf="studentform.controls['email'].hasError('pattern')">inavlid email</span>
+</div>
+</div><br>
+
+<div>
+    <label for="gender"><b>Gender: </b></label>
+    <input type="radio" value='Male' formControlName="gender" >Male
+    <input type="radio" value='Female' formControlName="gender">Female
+    <div *ngIf="studentform.controls['gender'].touched && studentform.controls['gender'].invalid">
+        <span *ngIf="studentform.controls['gender'].hasError('required')">gender is required</span>
+    </div>
+</div><br>
+
+
+<div>
+<input type="submit" value="submit">
+</div>
+</form>
+
+</div>
+</body> 

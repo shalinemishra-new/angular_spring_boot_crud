@@ -1,0 +1,38 @@
+<p>view-operation works!</p>
+<body>
+    <div >
+<form [formGroup]="studentviewform">
+
+<div class="col-sm-76">
+<label  class="col-sm-2 col-form-label"><b>First Name: </b></label>
+<input type="text" placeholder="name" [(ngModel)]="student.firstName" formControlName="firstName" readonly>
+</div><br>
+
+<div>
+    <label  class="col-sm-2 col-form-label"><b>Last Name: </b></label>
+    <input type="text" placeholder="name" [(ngModel)]="student.lastName" formControlName="lastName" readonly> 
+    </div><br>
+
+    <div>
+        <label for="age"><b>Student age: </b></label>
+        <input type="number" placeholder="age" [(ngModel)]="student.age" formControlName="age" readonly>
+        </div><br>
+
+        <div>
+            <label for="mobno"><b>Student contact: </b></label>
+            <input type="text" [(ngModel)]="student.contact" placeholder="mobile no" formControlName="contact" readonly>
+            </div><br>    
+
+<div>
+<label for="email"><b>Student email: </b></label>
+<input type="text" placeholder="email"  [(ngModel)]="student.email" formControlName="email" readonly>
+</div><br>
+
+
+<div>
+    <button type="reset" (click)="cancel()">Cancel</button>
+</div>
+</form>
+
+</div>
+</body> 

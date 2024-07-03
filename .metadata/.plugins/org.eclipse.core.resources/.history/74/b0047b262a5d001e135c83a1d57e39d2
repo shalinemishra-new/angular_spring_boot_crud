@@ -1,0 +1,5 @@
+package com.yash.student.model.repository;
+
+public interface StudentRepository {
+
+}
